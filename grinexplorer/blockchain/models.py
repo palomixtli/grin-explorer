@@ -79,6 +79,10 @@ class Block(models.Model):
 
     total_kernel_offset = models.CharField(max_length=64)
 
+    output_mmr_size = models.IntegerField()
+
+    kernel_mmr_size = models.IntegerField()
+
     @property
     def difficulty(self):
         # Maximum difficulty this proof of work can achieve
@@ -167,6 +171,8 @@ class Kernel(models.Model):
     features = models.TextField()
 
     fee = models.IntegerField()
+
+    fee_shift = models.IntegerField()
 
     lock_height = models.IntegerField()
 
